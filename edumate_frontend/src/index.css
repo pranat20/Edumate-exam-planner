@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------
+   Base Styles
+-------------------------- */
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: #f9fafb; /* subtle neutral */
+  color: #1f2937; /* slate-800 text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Better link styles */
+a {
+  @apply text-edublue hover:text-eduyellow transition-colors duration-200;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold tracking-tight text-gray-900;
+}
+
+/* --------------------------
+   Custom Colors
+   (mapped from Tailwind config if extended)
+-------------------------- */
+:root {
+  --edublue: #1b4f72;
+  --eduyellow: #f1c40f;
+}
+
+/* --------------------------
+   Animations
+-------------------------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeUp {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in both;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* --------------------------
+   Buttons
+-------------------------- */
+.btn-primary {
+  @apply px-5 py-2.5 rounded-full font-semibold shadow-md bg-yellow-500 text-white hover:bg-yellow-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400;
+}
+
+.btn-secondary {
+  @apply px-5 py-2.5 rounded-full font-semibold shadow border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300;
+}
+
+/* --------------------------
+   Cards
+-------------------------- */
+.card {
+  @apply bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 duration-200;
+}
+
+/* --------------------------
+   Utilities
+-------------------------- */
+.text-gradient {
+  background: linear-gradient(90deg, #1b4f72, #f1c40f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container-narrow {
+  @apply max-w-4xl mx-auto px-6;
+}
+
+
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spinSlow 2s cubic-bezier(.17,.67,.32,1) both; }
